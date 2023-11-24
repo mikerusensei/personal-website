@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root{
+  --dark-blue: #130D33;
+  --light-dark-blue: #231955;
+  --blue: #1F4690;
+  --light-yellow: #E8AA42;
+  --pale-white: #FFE5B4;
+  --red: #EE4B2B;
+  --white: #FFFFFF;
+}
+
+header{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: var(--light-dark-blue);
+}
+
+nav{
+  height: 5rem;
+  width: 100%;
+}
+.logo{
+  margin-left: 2.5rem;
+}
+.logo, .logo2{
+  color: var(--white);
+  font-size: 1.875rem;
+  line-height: 5rem;
+  font-weight: bold;
+  font-family: 'Blanka', sans-serif;
+}
+nav ul{
+  list-style: none;
+  float: right;
+  margin-right: 1.25rem;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 5rem;
+  margin: 0 0.313rem;
+}
+nav ul li a{
+  text-decoration: none;
+  margin: 0.313rem 0.313rem;
+  color: var(--white);
+  font-size: 1.063rem;
+  text-transform: uppercase;
+  font-family: 'Blinker', sans-serif;
+  font-weight: bold;
+}
+.checkbtn{
+  color: var(--white);
+  font-size: 1.563rem;
+  float: right;
+  line-height: 5rem;
+  margin-right: 2.5rem;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+
+a.active, a:hover{
+  color: var(--pale-white)
+}
+
+/* Tablet Compatibility */
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  /* Start of Nav Bar */
+  .logo, .logo2{
+    font-size: 25px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+  /* End of Nav Bar */
+}
+
+/* Phone Compatibility */
+@media screen and (max-width: 767px){
+  /* Start of Nav Bar */
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--blue);
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  #check:checked ~ ul{
+    left: 0
+  }
+  .logo{
+    margin-left: 20px;
+  }
+  .logo, .logo2{
+    font-size: 25px;
+  }
+  /* End of Nav Bar */
+
+  /* Home Section */
+  .text-container{
+    width: 100vw;
+  }
+  .text-container p, .social-links, .btn-container{
+    margin-left: 20px;
+    font-size: 25px;
+  }
+  .img-container{
+    display: none;
+  }
+
+  /* Scroll Bar */
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+  /* End of Scroll Bar */
+  /* End of Home Section */
+}
